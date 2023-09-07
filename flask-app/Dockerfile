@@ -13,5 +13,4 @@ ENV USER_PWD=""
 ENV DB_URL=""
 
 
-
 CMD ["python3", "run.py"]
