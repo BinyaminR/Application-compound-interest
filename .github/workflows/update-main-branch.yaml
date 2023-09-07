@@ -1,10 +1,16 @@
 name: Commit
 
+# on:
+#   workflow_run:
+#     workflows: ["Test"]
+#     types:
+#       - completed
+
 on:
-  workflow_run:
-    workflows: ["Test"]
-    types:
-      - completed
+  push:
+    branches:
+      - feature
+      
       
 jobs:
   merge-main:

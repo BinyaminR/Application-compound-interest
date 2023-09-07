@@ -1,16 +1,11 @@
 name: Build
 
-# on:
-#   workflow_run:
-#     workflows: ["Commit"]
-#     types:
-#       - completed
-
 on:
-  push:
-    branches:
-      - feature
-      
+  workflow_run:
+    workflows: ["Commit"]
+    types:
+      - completed
+
 jobs:
   build-image:
     runs-on: ubuntu-latest 
