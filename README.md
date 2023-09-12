@@ -57,4 +57,4 @@ Once the changes are pushed to a feature branch, they are automatically tested u
 ## The application:
 
 ## Fist look
-![Investment](/images/invest-1.jpg)<br>
+![Investment](/images/invest-1.png)<br>
