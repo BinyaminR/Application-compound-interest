@@ -56,5 +56,8 @@ Once the changes are pushed to a feature branch, they are automatically tested u
 
 ## The application:
 
-## Fist look
+## Deposit page
 ![Investment](/images/invest-1.png)<br>
+
+## Investments page
+![Investment](/images/invest-2.png)<br>
