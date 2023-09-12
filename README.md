@@ -3,7 +3,9 @@
 This repository contains the source code for the DevOps application, which is a part of a larger ecosystem composed of three repositories:
 
  **Application** (Current repository): [Application Repo](https://github.com/BinyaminR/ci.env)
+ 
  **GitOps**: [GitOps Repo](https://github.com/BinyaminR/cd.env)
+ 
  **Infrastructure**: [Infrastructure Repo](https://github.com/BinyaminR/Provision-Infrastructure-GKE)
 
 ## Application Overview
