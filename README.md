@@ -2,12 +2,12 @@
 
 This repository contains the source code for the DevOps application, which is a part of a larger ecosystem composed of three repositories:
 
- **Application** (Current repository): [Application Repo](https://github.com/BinyaminR/ci.env)
- 
- **GitOps**: [GitOps Repo](https://github.com/BinyaminR/cd.env)
- 
- **Infrastructure**: [Infrastructure Repo](https://github.com/BinyaminR/Provision-Infrastructure-GKE)
+ **Application**: [Application Repo](https://github.com/BinyaminR/Application-compound-interest)
 
+ **GitOps** (Current repository): [GitOps Repo](https://github.com/BinyaminR/Gitops-compound-interest)
+ 
+ **Infrastructure**: [Infrastructure Repo](https://github.com/BinyaminR/Infrastructure-compound-interest)
+ 
 ## Application Overview
 
 This application serves as a foundational template for a CI/CD (Continuous Integration/Continuous Deployment) pipeline, leveraging a multi-faceted technology stack. The CI/CD pipeline enables automated testing, building, and deployment of applications in a streamlined manner. The application is built on Python, using the Flask web framework for creating a simple REST API. It uses MongoDB as its data store, thereby enabling high-performance, easily scalable NoSQL storage.
