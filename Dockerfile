@@ -6,6 +6,8 @@ COPY ./flask-app /app
 
 RUN pip install -r requirements.txt
 
+RUN apk update && apk add iputils
+
 EXPOSE 5000
 
 ENV USER_NAME=""
