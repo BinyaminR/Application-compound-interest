@@ -53,3 +53,8 @@ Once the changes are pushed to a feature branch, they are automatically tested u
 - [ArgoCD](https://argoproj.github.io/argo-cd/): A declarative, GitOps continuous delivery tool for Kubernetes.
 - [Prometheus](https://prometheus.io/docs/introduction/overview/): An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database, and modern alerting approach.
 - [Grafana](https://grafana.com/docs/grafana/latest/): An open-source analytics and monitoring solution.
+
+## The application:
+
+## Fist look
+![Investment](images/invest-1.jpg)<br>
