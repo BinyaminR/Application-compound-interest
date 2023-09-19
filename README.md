@@ -56,6 +56,9 @@ Once the changes are pushed to a feature branch, they are automatically tested u
 
 ## The application:
 
+## Architecture
+![Architecture](/images/Devops-project.jpg)<br>
+
 ## Deposit page
 ![Investment](/images/invest-1.png)<br>
 
