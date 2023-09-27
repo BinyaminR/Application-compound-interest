@@ -36,5 +36,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v4
       with:
-        push: true
-        tags: ${{ secrets.DOCKER_USER }}/compound-interest:${{ steps.get_commit_message.outputs.message }}
+       push: true
+       context: ./application
+       file: ./application/Dockerfile
+       tags: ${{ secrets.DOCKER_USER }}/compound-interest:${{ steps.get_commit_message.outputs.message }}
