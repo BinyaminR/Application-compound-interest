@@ -1,59 +1,60 @@
 version: '3.9'
 services:
-  # proxy:
-  #   image: nginx
-  #   ports:
-  #     - 80:80
-  #   volumes:
-  #       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-  #       # - ./nginx/static:/usr/share/nginx/html/static
-        
   flask-app:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./application
     container_name: flask-app
-    ports:
-      - "5000:5000"  # Map port 5000 in the container to port 5000 on the host
+    restart: always
     environment:
-      # MONGO_URI: mongodb://0.0.0.0:27017/ # Replace with your MongoDB URI and database name
-      APP_DEBUG: "true"
-      USER_NAME: root
-      USER_PWD: root_password
-      DB_URL: mongo
-      # MONGODB_DATABASE: ProjectDB
-      # MONGODB_USERNAME: flaskuser
-      # MONGODB_PASSWORD: your_mongodb_password
-      # MONGODB_HOSTNAME: mongodb
+      HOST_NAME: mongodb
+      MONGO_DB_USERNAME: jonathan
+      MONGO_DB_PASSWORD: shtadler
+      SECRET_KEY: shT@bI3rU98RE7878
+    expose:
+      - 8000
     depends_on:
-      - mongo
+      - mongodb
     networks:
-      - flask-mongo
+      - backend
+      - frontend
 
 
-  mongo:
-    image: mongo:7.0.1
-    # build:
-    #   context: ./mongo-db
-    #   dockerfile: Dockerfile
-    container_name: mongodb
+  nginx:
+    build:
+      context: ./nginx
+    container_name: nginx
+    restart: always
     ports:
-      - "27017:27017"
+      - "80:80" 
+    depends_on:
+      - flask-app
+    networks:
+      - frontend
+
+
+  mongodb:
+    image: mongo:7.0.1
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"  
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root_password
-      MONGO_INITDB_DATABASE: ProjectDB
+      MONGO_INITDB_ROOT_USERNAME: jonathan
+      MONGO_INITDB_ROOT_PASSWORD: shtadler
       MONGODB_DATA_DIR: /data/db
       MONDODB_LOG_DIR: /dev/null
-      # SECRET_KEY: SHt@dLer8j7d8z3s2023
     volumes:
       - mongodbdata:/data/db
     networks:
-      - flask-mongo
+      - backend
 
 
 networks:
-  flask-mongo:
+  backend:
+    driver: bridge
+  frontend:
+    driver: bridge
+
 
 volumes:
   mongodbdata:
