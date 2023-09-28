@@ -33,7 +33,7 @@ jobs:
         cd feature/helm/app-chart && ./update_image.sh ${{ secrets.DOCKER_USER }}/compound-interest:${{ steps.get_commit_message.outputs.message }}
         git config --global user.email "binyamin.rothenberg@gmail.com"
         git config --global user.name "BinyaminR"
-        git add feature/helm/app-chart/values.yaml
+        git add values.yaml
         git status
         git commit -m "updated image"
         git push origin feature
