@@ -2,7 +2,7 @@ name: Commit
 
 on:
   workflow_run:
-    workflows: ["Unit test"]
+    workflows: ["Containerized Enviorment Test"]
     types:
       - completed
 
