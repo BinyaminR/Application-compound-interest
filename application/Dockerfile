@@ -6,12 +6,15 @@ WORKDIR /app
 
 COPY . /app
 
-
+RUN apk update && apk upgrade
+RUN apk add --no-cache build-base linux-headers libffi-dev python3-dev
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
 # Install dependencies
-RUN apk update && apk upgrade && \
-    apk add build-base && \
-    apk add linux-headers && \
-    pip install -r requirements.txt
+# RUN apk update && apk upgrade && \
+#     apk add build-base && \
+#     apk add linux-headers && \
+#     pip install -r requirements.txt
 
 
 # Create the group and user, set the ownership of the /app, switch to jonathan_shtadler
