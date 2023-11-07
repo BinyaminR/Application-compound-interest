@@ -9,7 +9,8 @@ COPY . /app
 RUN apk update && apk upgrade
 RUN apk add --no-cache build-base linux-headers libffi-dev python3-dev
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -v -r requirements.txt
+
 # Install dependencies
 # RUN apk update && apk upgrade && \
 #     apk add build-base && \
